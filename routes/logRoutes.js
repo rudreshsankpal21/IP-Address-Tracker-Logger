@@ -6,7 +6,7 @@ const {
 } = require("../controllers/logController");
 const logRoutes = express.Router();
 
-logRoutes.post("/track", trackVisitor);
+logRoutes.get("/track", trackVisitor);
 logRoutes.get("/logs", getLogs);
 logRoutes.delete("/logs", deleteLogs);
 

@@ -1,10 +1,11 @@
+const Log = require("../models/log");
+
 // Track visitor
 const trackVisitor = async (req, res) => {
   try {
     // log ip + userAgent
     const log = await Log.create({
       ip: req.ip,
-      location: req.location,
       userAgent: req.headers["user-agent"],
     });
     res.status(200).json(log);
